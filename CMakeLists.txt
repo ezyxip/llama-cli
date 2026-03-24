@@ -32,7 +32,7 @@ file(GLOB_RECURSE SOURCES
 
 add_executable(${PROJECT_NAME} ${SOURCES})
 
-target_link_libraries(${PROJECT_NAME} PRIVATE llama)
+# target_link_libraries(${PROJECT_NAME} PRIVATE llama)
 
 # target_include_directories(${PROJECT_NAME} 
 #     PRIVATE 
