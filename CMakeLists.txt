@@ -28,17 +28,17 @@ file(GLOB_RECURSE SOURCES
     src/**/*.cpp
 )
 
-# add_subdirectory(llama.cpp)
+add_subdirectory(llama.cpp)
 
 add_executable(${PROJECT_NAME} ${SOURCES})
 
-# target_link_libraries(${PROJECT_NAME} PRIVATE llama)
+target_link_libraries(${PROJECT_NAME} PRIVATE llama)
 
-# target_include_directories(${PROJECT_NAME} 
-#     PRIVATE 
-#         ${CMAKE_CURRENT_SOURCE_DIR}/include
-#         ${CMAKE_CURRENT_SOURCE_DIR}/src
-# )
+target_include_directories(${PROJECT_NAME} 
+    PRIVATE 
+        ${CMAKE_CURRENT_SOURCE_DIR}/include
+        ${CMAKE_CURRENT_SOURCE_DIR}/src
+)
 
 include(GNUInstallDirs)
 
@@ -46,4 +46,4 @@ install(TARGETS ${PROJECT_NAME}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
-# install(DIRECTORY model DESTINATION ${CMAKE_INSTALL_DATADIR}/${PROJECT_NAME}/models)
+install(DIRECTORY model DESTINATION ${CMAKE_INSTALL_DATADIR}/${PROJECT_NAME}/models)
